@@ -1,0 +1,22 @@
+{
+  "version": "1a",
+  "name": "Profiler Example",
+  "launch_path": "/index.html",
+  "description": "Debugging and Profilling a Canvas Tag",
+  "icons": {
+    "16": "/images/WrenchIcon16.png",
+    "32": "/images/WrenchIcon32.png",
+    "48": "/images/WrenchIcon48.png",
+    "64": "/images/WrenchIcon64.png",
+    "128": "/images/WrenchIcon128.png"
+  },
+  "developer": {
+    "name": "Jason Weathersby",
+    "url": "http://hacks.mozilla.com"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "orientation": "landscape-portrait",
+  "default_locale": "en"  
+}

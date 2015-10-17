@@ -1,0 +1,9 @@
+
+canvas { 
+ background-color: rgba(255, 162, 0, 0.4);
+ background-position: center; 
+ background-repeat: repeat; 
+ display: block;
+ border:1px;
+ border-style: solid;
+}	
