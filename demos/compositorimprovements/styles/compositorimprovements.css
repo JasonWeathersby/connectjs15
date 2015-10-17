@@ -1,0 +1,26 @@
+body { max-width: 40em; margin: 2em auto; }
+
+input.running { color: red }
+
+@keyframes spin {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+
+.spin {
+  animation: spin infinite 1500ms linear;
+  transform-origin: center;
+  height: 1em;
+  width: 10em;
+  margin: 5em 0;
+  display: inline-block;
+}
+
+.flip {
+  transform: scaleX(-1);
+  transform-origin: center;
+  display: inline-block;
+}
+
+.s11, .s22 { background: orange }
+.s12, .s21 { background: blue }

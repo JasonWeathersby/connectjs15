@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<title>Benefits of running animations on the compositor thread</title>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link href="styles/compositorimprovements.css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+    <h1>Smoothness benefits of running animations on the compositor thread</h1>
+
+    <p>This demo shows the smoothness benefits of having animations that run on the compositor thread. Without animations running on the compositor thread, choosing to
+        <input type="button" onclick="three_seconds_of_slow_js()" value="run 3 seconds of slow Javascript"> causes the animations to stutter. With animations running on the compositor thread, the animations continue running smoothly.</p>
+
+    <div>
+        <div class="spin s11"></div>
+        <div class="flip">
+            <div class="spin s12"></div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="compositorimprovements.js"></script>
+</body>

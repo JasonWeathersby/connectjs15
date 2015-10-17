@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="container">
+        <h1>Layout Thrashing</h1>
+        <ul class="pipeline">
+            <li class="js active">JavaScript</li>
+            <li class="restyle active">Restyle</li>
+            <li class="reflow active">Reflow</li>
+            <li class="paint active">Paint</li>
+            <li class="composite active">Composite</li>
+        </ul>
+        <p class="description">
+            When setting a style and immediately fetching the value, the browser is forced to compute the resulting style immediately to return the value synchronously when requested in JS. If this style property affects the element's position, or any other element's position, this causes a reflow. View which properties can cause reflow on <a href="http://csstriggers.com">CSS Triggers</a>.
+        </p>
+        <button onclick="thrash();">LayoutThrash</button>
+        <button onclick="batch();">Batch</button>
+        <div id="block" class="mybox"></div>
+    </div>
+    <script>
+        var block = document.querySelector("#block");
+
+        function thrash() {
+            for (var i = 0; i < 100; i++) {
+                //getting the property causes a forced synch layout
+                var h = block.clientWidth;
+                block.style.width = (h + (1)) + "px";
+            }
+        }
+
+        function batch() {
+            var h = block.clientWidth;
+            for (var i = 0; i < 100; i++) {
+                block.style.width = (h + (i) + (1)) + "px";
+            }
+        }
+    </script>
+</body>
+
+</html>

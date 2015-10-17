@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="container">
+        <h1>Box Shadows are expensive paints</h1>
+        <ul class="pipeline">
+            <li class="js active">JavaScript</li>
+            <li class="restyle active">Restyle</li>
+            <li class="reflow active">Reflow</li>
+            <li class="paint active">Paint</li>
+            <li class="composite active">Composite</li>
+        </ul>
+        <p class="description">
+			Some CSS properties take more time to paint like box shadows
+        </p>
+        <button onclick="shadow();">Shadow</button>
+        <button onclick="noShadow();">Remove Shadow</button>
+        <div id="block" class="mybox"></div>
+    </div>
+    <script>
+        var block = document.querySelector("#block");
+
+        function shadow() {
+    		block.classList.add("shadow");
+
+        }
+
+        function noShadow() {
+    		block.classList.remove("shadow");
+
+        }
+    </script>
+</body>
+
+</html>

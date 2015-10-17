@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="container">
+        <h1>Lazy Restyle</h1>
+        <ul class="pipeline">
+            <li class="js active">JavaScript</li>
+            <li class="restyle active">Restyle</li>
+            <li class="reflow">Reflow</li>
+            <li class="paint active">Paint</li>
+            <li class="composite active">Composite</li>
+        </ul>
+        <p class="description">
+            When modifying style values that are not immediately read, the browser can defer recalculating the styles outside of JavaScript execution.
+        </p>
+        <button onclick="go();">Force Lazy Restyle</button>
+        <div id="block" class="mybox"></div>
+    </div>
+    <script>
+        var block = document.querySelector("#block");
+
+        function go() {
+            var _;
+            block.style.backgroundColor = "blue";
+            block.style.backgroundColor = "green";
+            block.style.backgroundColor = "red";
+            block.style.backgroundColor = "orange";
+        }
+    </script>
+</body>
+
+</html>
